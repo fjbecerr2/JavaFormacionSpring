@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- bean asociado al constructor y otro sin class -->
+   <bean id = "hola" class = "es.formacion.tutorialspoint.spring1.Hola">
+		<!-- Este para un ref al bean -->
+		<property name ="holaInyeccion"  ref = "holaInyeccion"/>
+		<!-- Estas pasan un valor sin class ni bean-->
+ 		<property name ="holaInyeccion2"  value = "Valor de holaInyeccion2"/>
+		<property name ="holaInyeccion3"  value = "Valor de holaInyeccion 3 hola"/>
+	</bean>
+	
+	<!-- Definicion bean inyectado -->
+   	<bean id = "holaInyeccion" class = "es.formacion.tutorialspoint.spring1.HolaInyeccion">
+	</bean>
+	
+	<bean id = "jane" class = "es.formacion.tutorialspoint.spring1.Hola">
+		<property name ="holaInyeccion3"  value = "Valor de holaInyeccion 3 jane"/>
+   	</bean>
+
+	
+	 	
+</beans>

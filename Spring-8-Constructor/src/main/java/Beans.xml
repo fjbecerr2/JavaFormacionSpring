@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- bean asociado al constructor -->
+   <bean id = "hola" class = "es.formacion.tutorialspoint.spring1.Hola">
+ 		<constructor-arg ref = "holaInyeccion"/>
+	</bean>
+	
+	<!-- bean asociado al constructor con dos parametros-->
+   <bean id = "holaparam" class = "es.formacion.tutorialspoint.spring1.Hola">
+ 		<constructor-arg ref = "holaInyeccion"/>
+		<constructor-arg ref = "holaInyeccion2"/>
+	</bean>
+	
+	<!-- bean asociado al constructor con los tipos de parametros fijados -->
+	<bean id= "holaparamcontipo" class = "es.formacion.tutorialspoint.spring1.Hola">
+		<constructor-arg type = "int" value = "20"/>
+      	<constructor-arg type = "java.lang.String" value = "Ana"/>
+	</bean>
+	
+	<!-- bean asociado al constructor con los tipos de parametros indice -->
+	<bean id = "holaparamindex" class = "es.formacion.tutorialspoint.spring1.Hola">
+      	<constructor-arg index = "1" value = "1:80"/>
+		<constructor-arg index = "0" value = "30"/>
+		<constructor-arg index = "2" value = "Edu"/>
+   	</bean>
+	
+	
+	<!-- Definicion bean inyectado -->
+   <bean id = "holaInyeccion" class = "es.formacion.tutorialspoint.spring1.HolaInyeccion">
+	</bean>
+	 <bean id = "holaInyeccion2" class = "es.formacion.tutorialspoint.spring1.HolaInyeccion2">
+	</bean>
+
+</beans>

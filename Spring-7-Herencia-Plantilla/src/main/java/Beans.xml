@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Creamos una plantilla abstracta sin clase asociada -->
+	<bean id = "beanPlantilla" abstract = "true">
+      <property name = "message1" value = "Hola Spring Plantilla 1!"/>
+      <property name = "message2" value = "Hola Spring Plantilla 2!"/>
+      <property name = "message3" value = "Hola Spring Plantilla 3!"/>
+   	</bean>
+
+	<!-- bean basado en clase -->
+
+	<bean id = "hola" class = "es.formacion.tutorialspoint.spring1.Hola" parent = "beanPlantilla">
+		<!-- Cada bean tiene que tener un metodo asociado con una variable -->
+		<property name = "message1" value = "Hola Spring 1!"/>
+		<property name = "message2" value = "Hola Spring 2!"/>
+	</bean>
+	
+</beans>
