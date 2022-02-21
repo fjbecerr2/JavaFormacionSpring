@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- autowire BYNAME localiza el bean declarado con el mismo NOMBRE en la clase 
+	aunque no este asociado	en el xml -->
+   <bean id = "hola" class = "es.formacion.tutorialspoint.spring1.Hola" autowire = "byName" >
+      <property name = "message" value = "Hola Spring 1!"/>
+   </bean>
+
+	<!-- autowire BYTYPE localiza el bean declarado con el mismo TIPO en la clase 
+	aunque no este asociado	en el xml -->
+  	<bean id = "hola2" class = "es.formacion.tutorialspoint.spring1.Hola2" autowire = "byType">
+      <property name = "message" value = "Hola Spring 2!"/>
+   </bean>
+
+	<!-- Este bean sera llamado por el hola 2 por coincidir el tipo -->
+	<bean id ="hola3"  class = "es.formacion.tutorialspoint.spring1.Hola3" autowire = "constructor">
+	 	<property name = "message" value = "Hola Spring 3!"/>
+   	</bean>
+
+	<!-- Ente bean va con el constructor del hola3 -->
+	<bean id ="hola4"  class = "es.formacion.tutorialspoint.spring1.Hola4" >
+	 	<property name = "message" value = "Hola Spring 4!"/>
+   	</bean>
+
+</beans>

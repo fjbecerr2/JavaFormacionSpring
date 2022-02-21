@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "hola" class = "es.formacion.tutorialspoint.spring1.Hola">
+      	<property name = "message" value = "Hola Spring 1!"/>
+		<!-- USO DE REF -->
+		<property name="holaRef" >
+			<!-- Funciona igual ref local= que ref bean= -->
+            <ref local="holaRef"/>
+        </property>
+		<!-- -->
+
+		<property name="listaPaises">
+			<list>
+				<value>España</value>
+				<value>Francia</value>
+				<value>Italia</value>
+				<!-- Usamos la propiedad para extraer el dato -->
+				<value>#{holaRef.nuevoPais}</value>
+				<!-- ref bean="holaRef2" / NO FUNCIONA-->
+			</list>
+		</property>
+   </bean>
+ 	
+	<bean id = "holaRef" class = "es.formacion.tutorialspoint.spring1.HolaRef" >
+      	<property name = "holaRef" value = "Holanda"/>
+		<property name = "nuevoPais" value = "Belgica"/>
+   </bean>
+	
+	<!-- Pasar valores nulos o vacios 
+	<property name = "email" value = ""/>
+	<property name = "email"><null/></property>
+	-->
+
+</beans>
