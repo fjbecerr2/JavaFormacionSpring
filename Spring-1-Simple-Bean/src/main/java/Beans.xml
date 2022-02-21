@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "hola1" class = "es.formacion.tutorialspoint.spring1.Hola">
+      <property name = "message" value = "Hola Spring 1!"/>
+   </bean>
+ 	<bean id = "hola2" class = "es.formacion.tutorialspoint.spring1.Hola">
+      <property name = "message" value = "Hola Spring 2!"/>
+   </bean>
+
+</beans>

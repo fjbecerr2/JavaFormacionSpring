@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id = "hola1" class = "es.formacion.tutorialspoint.spring1.Hola">
+		<!-- Cada bean tiene que tener un metodo asociado con una variable -->
+		<property name = "message" value = "Hola Spring 1!"/>
+		<property name = "message2" value = "Hola Spring 1A!"/>
+	</bean>
+	<bean id = "hola2" class = "es.formacion.tutorialspoint.spring1.Hola" parent = "hola1">
+		<property name = "message" value = "Hola Spring 2!"/>
+	</bean>
+	<!-- Creamos un tercer bean que tiene su propia clase -->
+	<bean id = "hola3" class = "es.formacion.tutorialspoint.spring1.Hola3" parent = "hola1">
+		<!-- Cada bean tiene que tener un metodo asociado con una variable -->
+		<property name = "message" value = "Hola3 Spring 1!"/>
+		<!-- No se define el message2 y se hereda -->
+		<property name = "message3" value = "Hola3 Spring 1.3!"/>
+	</bean>
+
+</beans>
